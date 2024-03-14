@@ -8,6 +8,10 @@ import cors from 'cors';
 import config from './config/config';
 //FIC: Declaramos la variable app igualandola a express
 const app = express();
+//FIC: Establece la conexion a la BD
+import {moongose} from './config/database.config'
+// Import Routes
+import routeAPI from './api/pwa/routes/index';
 //FIC: Settings
 app.set('port', config.PORT);
 //FIC: Middlewares generales
@@ -16,10 +20,12 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 //FIC: Routes
+//app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+//routeAPI(app);
 const api = config.API_URL;
 app.get(`${api}`, (req,res)=>{
     res.send(
-        `<h1>RESTful running in root</h1> <p> eCommerce: <b>${api}/api-docs</b> for more information.</p>`
+    `<h1>RESTful running in root</h1> <p> eCommerce: <b>${api}/api-docs</b> for more information.</p>`
     );
 })
 app.get('/DrFIC', (req,res)=>{
@@ -28,6 +34,8 @@ app.get('/DrFIC', (req,res)=>{
     );
 })
 // Routes
+// Routes
+routeAPI(app);
 // Swagger Docs
 // Middleware para el manejo de errores
 // Export App

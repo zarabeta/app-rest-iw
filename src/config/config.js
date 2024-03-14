@@ -5,8 +5,8 @@ export default {
     HOST: process.env.HOST || 'localhost',
     PORT: process.env.PORT || 3000,
     API_URL: process.env.API_URL || '/vete_a_la_loma_y_debajo_del_trenesito_esta_lo_que_quiere_hackear',
-    //CONNECTION_STRING: process.env.CONNECTION_STRING || 'mongodb://localhost:27017/?serverSelectionTimeoutMS=5000&connectTimeoutMS=10000'
-    //DATABASE: process.env.DATABASE || 'db_default',
-    //DB_USER: process.env.DB_PASSWORD || 'admin',
-    //DB_PASSWORD: process.env.DB_USER || 'admin',
+    CONNECTION_STRING: process.env.CONNECTION_STRING || 'mongodb://localhost:27017/?serverSelectionTimeoutMS=5000&connectTimeoutMS=10000',
+    DATABASE: process.env.DATABASE || 'db_default',
+    DB_USER: process.env.DB_PASSWORD || 'admin',
+    DB_PASSWORD: process.env.DB_USER || 'admin',
 }
